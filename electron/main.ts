@@ -1,4 +1,8 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
+import * as ControllerUser from './database/controllers/ControllerUser';
+
+import dbInit from './database/init'
+dbInit()
 
 let mainWindow: BrowserWindow | null
 
@@ -37,6 +41,14 @@ async function registerListeners () {
   ipcMain.on('message', (_, message) => {
     console.log(message)
   })
+
+  ipcMain.on('select', async () => {
+    console.log(await ControllerUser.getAll());
+  });
+
+  ipcMain.on('create', async () => {
+    console.log(await ControllerUser.create());
+  });
 }
 
 app.on('ready', createWindow)

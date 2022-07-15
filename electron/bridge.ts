@@ -9,11 +9,19 @@ export const api = {
    * The function below can accessed using `window.Main.sendMessage`
    */
 
+  insereUser: async () =>{
+    ipcRenderer.send('create');
+  },
+
+  buscaUsers: async () =>{
+    ipcRenderer.send('select');
+  },
+
   sendMessage: (message: string) => {
     ipcRenderer.send('message', message)
   },
 
-  /**
+  /** -'
    * Provide an easier way to listen to events
    */
   on: (channel: string, callback: Function) => {
