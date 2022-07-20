@@ -15,6 +15,7 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "mysql2": "^2.3.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -47,6 +48,7 @@
     "babel-loader": "8.2.2",
     "cross-env": "7.0.3",
     "electron": "13.1.2",
+    "electron-builder": "^23.1.0",
     "eslint": "7.29.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-standard": "16.0.3",
@@ -87,7 +89,7 @@
                   "js": "./src/index.tsx",
                   "name": "main_window",
                   "preload": {
-                    "js": "./electron/bridge.ts"
+                    "js": "./electron/routes/index.ts"
                   }
                 }
               ]

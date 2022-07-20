@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from 'electron'
 
-export const api = {
+export const apiUser = {
   /**
    * Here you can expose functions to the renderer process
    * so they can interact with the main (electron) side
@@ -29,4 +29,4 @@ export const api = {
   }
 }
 
-contextBridge.exposeInMainWorld('Main', api)
+contextBridge.exposeInMainWorld('User', apiUser)

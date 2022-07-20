@@ -1,8 +1,9 @@
-import { api } from '../../electron/bridge'
+import { apiUser, apiTeste } from '../../electron/routes'
 
 declare global {
   // eslint-disable-next-line
   interface Window {
-    Main: typeof api
+    User: typeof apiUser
+    Teste: typeof apiTeste
   }
 }

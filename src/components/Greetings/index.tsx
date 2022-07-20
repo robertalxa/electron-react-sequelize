@@ -3,9 +3,9 @@ import { Container, Image, Text } from './styles'
 
 export function Greetings() {
   function handleSayHello() {
-    window.Main.sendMessage('Hello World');
-    window.Main.insereUser();
-    window.Main.buscaUsers();
+    window.User.sendMessage('Hello World');
+    window.User.insereUser();
+    window.User.buscaUsers();
 
     console.log('Message sent! Check main process log in terminal.')
   }
